@@ -47,7 +47,7 @@ async function category(inReq, _outResp) {
     // return extend && (tid = Object.entries(extend).map(([key, val] = entry) => "&" + key + "=" + val), api = (api += tid) + ("&f=" + encodeURIComponent(JSON.stringify(extend)))), request(api)
 
     return extend && request(api)
-    // 这个转换还在研究转换方法
+    
     // (tid = Object.entries(extend).map(([key, val] = entry) => "&" + key + "=" + val), api = (api += tid) + ("&f=" + encodeURIComponent(JSON.stringify(extend)))),
 }
 
