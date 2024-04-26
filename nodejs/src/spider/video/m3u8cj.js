@@ -7,11 +7,10 @@ const { _ } = pkg;
 let srcobj = {};
 let host = "";
 
-async function request(reqUrl, timeout = 6000) {
+async function request(reqUrl) {
     try {
         let res = await req(reqUrl, {
             method: 'get',
-            timeout: timeout
         });
         return res.data;
     } catch (error) {
@@ -23,7 +22,6 @@ async function requestSearch(reqUrl, source) {
     try {
         let res = await req(reqUrl, {
             method: 'get',
-            timeout: 6000
         });
         return { s: source, data: res.data};
     } catch (error) {
@@ -312,7 +310,7 @@ async function play(inReq, _outResp) {
     const id = inReq.body.id;
 
     // 采用接口识别返回
-    let data = await request("https://cdn.suxun.site/api/?key=4R35z4CE5ZmgSR6hKA&url=" + id)
+    let data = await request("https://jx.m3u8.biz/gg.php?url=" + id)
     if (data.code == 200) {
         return {
             parse: 0,
@@ -440,7 +438,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'm3u8cj',
-        name: '📙|采集整合',
+        name: '🌍 采集整合②',
         type: 3,
     },
     api: async (fastify) => {
